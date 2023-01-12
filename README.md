@@ -15,7 +15,7 @@ Managing users and adding super user privileges with visudo https://youtu.be/Nhj
 > passwd usernamepassword
 
 
-### 3. Add root privelages to the user. Edit sudo file  
+### 3. Add root privelages to the user. Edit sudo file with visudo
 
 *run*
 > visudo
@@ -25,4 +25,4 @@ Managing users and adding super user privileges with visudo https://youtu.be/Nhj
 
 *add the following line:*
 
-> kirill	ALL=(ALL)	ALL
+> username	ALL=(ALL)	ALL
