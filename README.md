@@ -7,22 +7,22 @@ Managing users and adding super user privileges with visudo https://youtu.be/Nhj
 ## Notes
 ### 1. Create user
 
-adduser username
+> adduser username
 
 
 ### 2. Add password to user 
 
-passwd usernamepassword
+> passwd usernamepassword
 
 
 ### 3. Add root privelages to the user. Edit sudo file  
 
 *run*
-visudo
+> visudo
 
 *file will open and after the line with*
-root	ALL=(ALL)	ALL  
+> root	ALL=(ALL)	ALL  
 
 *add the following line:*
 
-kirill	ALL=(ALL)	ALL
+> kirill	ALL=(ALL)	ALL
