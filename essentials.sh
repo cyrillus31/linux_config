@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# managing users and adding super user privileges with visudo https://youtu.be/NhjU0m7aNaA
+
 # packages
 sudo yum install gcc openssl-devel bzip2-devel libffi-devel zlib-devel
 sudo yum update -y
