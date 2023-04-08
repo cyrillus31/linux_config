@@ -1,0 +1,26 @@
+[Unit]
+Description=++SERVICE NAME++
+After=network.target
+Requires=network.target
+StartLimitIntervalSec=3600
+StartLimitBurst=12
+
+[Service]
+Type=simple
+WorkingDirectory=/home/kirill/projects/price_monitor/
+
+Environment="PRICE_MONITOR_TELEBOT_TOKEN= ++INSERT YOUR TOKEN++" 
+Environment="PRICE_MONITOR_TELEBOT_CHAT_ID= ++INSERT YOUR CHAT ID++"
+
+User=++YOUR USERNAME++
+Group=++YOUR GROUP USERNAME++
+
+ExecStart=/home/kirill/projects/venv/bin/python /home/kirill/projects/price_monitor/main.py --start
+ExecReload=/home/kirill/projects/venv/bin/python /home/kirill/projects/price_monitor/main.py --restart
+TimeoutSec=900
+Restart=always
+RestartSec=300
+
+[Install]
+WantedBy=multi-user.target
+
