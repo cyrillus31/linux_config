@@ -22,7 +22,7 @@ source ./install_nvchad.sh
 read -p "Do you want to setup .bashrc? y/n" answer
 
 if [ -f $HOME/.bashrc && $answer = "y"]; then
-  cat ../my_bash_config/.bashrc >> $HOME/.bashrc
+  cat ../my_bash_config/.bashrc >> $HOME/.bashrc-part
 else
   cp ../my_bash_config/.bashrc $HOME/
 fi;
