@@ -21,6 +21,9 @@ source ./install_nginx.sh
 source ./install_docker.sh
 source ./install_nvchad.sh
 
+# Make the time not interfere with Windows in dualboot
+source ./time_fix.sh
+
 
 # Setup .bashrc
 
