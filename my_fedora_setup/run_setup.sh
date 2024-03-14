@@ -26,16 +26,18 @@ source ./install_nvchad.sh
 
 read -p "Do you want to setup .bashrc? [y/n]   " answer
 
-if [ -f $HOME/.bashrc && $answer = "y"]; then
-  cat ../my_bash_config/.bashrc >> $HOME/.bashrc-part
-else
-  cp ../my_bash_config/.bashrc $HOME/
-fi;
-
-if [ -d $HOME/.bashrc.d/ && $answer = "y" ]; then
-  cp -t $HOME/.bashrc.d/ ../my_bash_config/.bashrc.d/*
-else
-  cp -r -t $HOME/ ../my_bash_config/.bashrc.d/
+if [ $answer = "y" ]; then
+  if [ -f $HOME/.bashrc ]; then
+    cat ../my_bash_config/.bashrc-part >> $HOME/.bashrc
+  else
+    cp ../my_bash_config/.bashrc $HOME/
+  fi;
+  
+  if [ -d $HOME/.bashrc.d/ ]; then
+    cp -t $HOME/.bashrc.d/ ../my_bash_config/.bashrc.d/*
+  else
+    cp -r -t $HOME/ ../my_bash_config/.bashrc.d/
+  fi;
 fi;
 
 
@@ -49,7 +51,7 @@ if grep -q set completion-ignore-case $inputrc_path; then
 else 
   echo 'not found'; 
   echo "set completion-ignore-case on" >> $inputrc_path
-  echo "DONE value was added"
+  echo "DONE autocompletion is now case insesitive"
 fi;
 
 
